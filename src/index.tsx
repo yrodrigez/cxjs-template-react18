@@ -20,6 +20,7 @@ const fakeData = [
 
 class PageController extends Controller {
     onInit() {
+        if (super.init) super.init();
         this.store.init('message', 'Hello, World!');
         this.store.init('$page.records', fakeData);
     }
