@@ -2,9 +2,7 @@ import {Store} from 'cx/data';
 import {Controller} from 'cx/ui';
 import {startAppLoop} from "./startAppLoop";
 import {Button, Grid, Section} from "cx/widgets";
-import style from "./index.scss";
-
-//style?.use();
+import "./index.scss";
 
 import {applyThemeOverrides} from "cx-theme-space-blue";
 
@@ -30,7 +28,7 @@ const App = () => (
   <cx>
     <div controller={PageController}>
       <h1 text-bind="message"></h1>
-      <Button onClick={(e, {store}) => {
+      <Button className="bg-slate-600" onClick={(e, {store}) => {
         store.set('message', 'Hello, CxJS!');
       }}>Click me</Button>
       <Section mod="well">
@@ -49,7 +47,13 @@ const App = () => (
   </cx>
 );
 
-window.onload = function () {
+
+window.addEventListener('resize', () => {
+  document.body.style.height = window.innerHeight + 'px';
+})
+
+window.addEventListener('load', function () {
+  document.body.style.height = window.innerHeight + 'px';
   startAppLoop(document.getElementById('app'), store, App);
-}
+})
 

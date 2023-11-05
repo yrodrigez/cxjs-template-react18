@@ -1,7 +1,11 @@
-//@import "~cx/src/variables";
-//@import "~cx/src/index";
+
 @import "~cx-theme-space-blue/src/variables";
 @import "~cx-theme-space-blue/src/index";
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 body {
     background: $cx-default-background-color;
     color: $cx-default-color;
